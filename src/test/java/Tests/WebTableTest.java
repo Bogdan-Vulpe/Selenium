@@ -26,7 +26,11 @@ public class WebTableTest {
 //        driver.get("https://demoqa.com/");
         Thread.sleep(2000);
 
-        // facem browserul in modeul maximize
+        // facem browserul in modeul maximizegit
+
+
+       //test
+
         driver.manage().window().maximize();
 
 //        site: gsp
