@@ -22,8 +22,8 @@ public class WebTableTest {
         driver =new ChromeDriver();
 
         //accesam o pagina web
-//       driver.get("https://www.gsp.ro/");
-//        driver.get("https://demoqa.com/");
+      // driver.get("https://www.gsp.ro/");
+           driver.get("https://demoqa.com/");
         Thread.sleep(2000);
 
         // facem browserul in modeul maximizegit
