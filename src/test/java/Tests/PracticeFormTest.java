@@ -32,40 +32,54 @@ public class PracticeFormTest {
         Thread.sleep(2000);
 
 
-        WebElement ElementsForm=driver.findElement(By.xpath("//h5[text()='Forms']"));
+        WebElement ElementsForm = driver.findElement(By.xpath("//h5[text()='Forms']"));
         ElementsForm.click();
 
-        WebElement ElementPracticeForm= driver.findElement(By.xpath("//span[text()='Practice Form']"));
+        WebElement ElementPracticeForm = driver.findElement(By.xpath("//span[text()='Practice Form']"));
         ElementPracticeForm.click();
 
 
         js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0,400)");
 
-        WebElement FirstNamePracticeForm= driver.findElement(By.id("firstName"));
-        String firstNamevalue="Andrei";
+        WebElement FirstNamePracticeForm = driver.findElement(By.id("firstName"));
+        String firstNamevalue = "Andrei";
         FirstNamePracticeForm.sendKeys(firstNamevalue);
 
-        WebElement LastNamePracticeForm=driver.findElement(By.id("lastName"));
-        String lastNamevalue="Popescu";
+        WebElement LastNamePracticeForm = driver.findElement(By.id("lastName"));
+        String lastNamevalue = "Popescu";
         LastNamePracticeForm.sendKeys(lastNamevalue);
 
-        WebElement emailPracticeForm=driver.findElement(By.id("userEmail"));
-        String emailvalue="andrei@gmail.com";
+        WebElement emailPracticeForm = driver.findElement(By.id("userEmail"));
+        String emailvalue = "andrei@gmail.com";
         emailPracticeForm.sendKeys(emailvalue);
 
-        WebElement phoneNumberPracticeForm= driver.findElement(By.cssSelector("input[placeholder='Mobile Number']"));
-        String phonenNumbervalue="0742509972";
+        WebElement phoneNumberPracticeForm = driver.findElement(By.cssSelector("input[placeholder='Mobile Number']"));
+        String phonenNumbervalue = "0742509972";
         phoneNumberPracticeForm.sendKeys(phonenNumbervalue);
 
-        WebElement uploadPicturePracticeForm=driver.findElement(By.id("uploadPicture"));
-       // uploadPicturePracticeForm.sendKeys("src/test/resources/1.PNG"); -inlocuita cu partea de jos
+        WebElement uploadPicturePracticeForm = driver.findElement(By.id("uploadPicture"));
+        // uploadPicturePracticeForm.sendKeys("src/test/resources/1.PNG"); -inlocuita cu partea de jos
         File file = new File("src/test/resources/1.PNG");
         uploadPicturePracticeForm.sendKeys(file.getAbsolutePath());
 
+        WebElement genderMalePracticeForm = driver.findElement(By.xpath("//label[@for='gender-radio-1']"));
+        WebElement genderFemalePracticeForm = driver.findElement(By.xpath("//label[@for='gender-radio-2']"));
+        WebElement genderOtherPracticeForm = driver.findElement(By.xpath("//label[@for='gender-radio-3']"));
+        String gender = ("Other");
 
 
+        if (gender.equals("Male")) {
+            genderMalePracticeForm.click();
+        } else if (gender.equals("Female")) {
+            genderFemalePracticeForm.click();
+        } else if (gender.equals("Other")) {
+            genderOtherPracticeForm.click();
+        }
 
 
     }
+
+
 }
+
